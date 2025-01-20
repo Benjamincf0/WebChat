@@ -1,0 +1,1404 @@
+* {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+  
+  body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  body main .contact-list #app .show {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+  
+  #navBar {
+    margin: none;
+    padding: 12px 0px 12px 0px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    box-sizing: border-box;
+  
+    height: 64px;
+    position: absolute;
+    z-index: 5;
+    background-color: rgb(244, 239, 239);
+    box-shadow: 0px 10px 10px 0px linear-gradient(#ff0000, #9198e5);
+  }
+  
+  #searchBarWrapper {
+    display: inline-block;
+    position: absolute;
+    height: 38px;
+    padding: 0px;
+    margin: 0px;
+    width: calc(100% - 100px);
+    right: 20px;
+    border-radius: 20px;
+    transition: 200ms;
+    border: solid rgb(255, 255, 255, 0.6) 1px;
+  }
+  
+  #searchInput {
+    position: absolute;
+    display: block;
+    top: 0px;
+    width: 100%;
+    padding-inline-start: 15px;
+    padding-inline-end: 80px;
+    height: 100%;
+    border: none;
+    background-color: rgb(255, 255, 255, 0.6);
+    border-radius: 19px;
+    outline: none;
+    box-sizing: border-box;
+    transition: 200ms;
+  }
+  
+  #searchInput:hover {
+    background-color: rgb(255, 255, 255, 0.8);
+  }
+  
+  #searchInput:focus {
+    background-color: rgb(255, 255, 255, 1);
+  }
+  
+  #navBar #searchBarWrapper button{
+    position: absolute;
+    display: inline-block;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 40px;
+    border: none;
+    margin: none;
+    padding: none;
+    box-sizing: border-box;
+    border-radius: 50%;
+    outline: none;
+    background-color: transparent;
+    transition: 200ms;
+    cursor: pointer;
+  }
+  
+  #navBar #searchBarWrapper #closeSearch {
+    right: 40px;
+    color: rgb(143, 143, 143);
+  }
+  
+  #navBar #searchBarWrapper #closeSearch:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(236, 79, 79);
+  }
+  
+  #navBar #searchBarWrapper #searchButton:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(55, 125, 230);
+  }
+  #profilePicWrapper {
+    background-color: rgba(255, 255, 255, 0.6);
+    display: inline-block;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 20px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    transition: 200ms;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  #profilePicWrapper img{
+    height: 100%;
+    width: 100%;
+  }
+  
+  #profilePicWrapper:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .profilePic {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  
+  main {
+    /* display: none; */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: burlywood;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .convoNlistWrapper {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .convoNlistWrapper .contact-list {
+    width: 40%;
+    height: 100%;
+    max-width: 500px;
+    background-color: white;
+    box-sizing: border-box;
+    z-index: 6;
+    position: absolute;
+  }
+  
+  .contacts {
+    margin-top: 64px;
+    padding: 0 5px;
+    width: 100%;
+    height: calc(100% - 64px);
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: scroll;
+    position: relative;
+    background-color: rgb(244, 239, 239);
+    /* box-sizing: border-box; */
+  }
+  
+  .convoNlistWrapper .contact-list .searchedFriend{
+    cursor: default;
+  }
+  
+  .convoNlistWrapper .contact-list .searchedFriend .conversation-info .email{
+    font-size: 8px;
+    color: rgb(107, 107, 107);
+    font-weight: bold;
+  }
+  
+  .convoNlistWrapper .contact-list .searchedFriend .conversation-info .username{
+    margin-top: 1px;
+    font-size: 16px;
+  }
+  
+  .convoNlistWrapper .contact-list .searchedFriend .conversation-info .creation-date{
+    font-size: 10px;
+  }
+  
+  .convoNlistWrapper .contact-list .friend .moreDiv, .convoNlistWrapper .contact-list .friend .openMoreButton{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 10px;
+    top: 50%;
+    transform: translate(0,-50%);
+    height: 24px;
+    transition: 200ms;
+    border-radius: 50%;
+    height: 34px;
+    width: 34px;
+  }
+  
+  .convoNlistWrapper .contact-list .friend .openMoreButton:hover {
+    color: blue;
+    background-color: white;
+  }
+  
+  .convoNlistWrapper .contact-list .friend .openMoreButton span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .convoNlistWrapper .contact-list .friend .open{
+    transform: rotate(180deg) translateY(50%);
+    color: black;
+  }
+  
+  .convoNlistWrapper .contact-list .friend .open ~ .moreDiv{
+    display: inline-block;
+    transform: translate(-35px, -50%);
+    opacity: 1;
+  }
+  
+  .convoNlistWrapper .contact-list .friend button, .convoNlistWrapper .contact-list .friend .moreDiv img{
+    margin: 0;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    border: none;
+    display: block;
+    background-color: transparent;
+    color: rgb(104, 104, 104);
+    cursor: pointer;
+    transition: 200ms;
+  }
+  
+  .convoNlistWrapper .contact-list .friend .moreDiv img{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .convoNlistWrapper .contact-list .friend .moreDiv button span{
+    font-size: 24px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .convoNlistWrapper .contact-list .friend .moreDiv button{
+    position: relative;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+  }
+  
+  .convoNlistWrapper .contact-list .friend .moreDiv button:hover{
+    color: rgb(107, 166, 255);
+  }
+  
+  
+  .convoNlistWrapper .contact-list .friend .moreDiv button:hover {
+    background-color: white;
+  }
+  
+  
+  
+  .convoNlistWrapper .contact-list .friend .moreDiv .removeContact:hover{
+    color: red;
+  }
+  
+  .convoNlistWrapper .contact-list .friend .moreDiv{
+    display: none;
+    opacity: 0;
+    height: 34px;
+  }
+  
+  .convoNlistWrapper .contact-list .searchedFriend .moreDiv{
+    display: inline-block;
+    opacity: 1;
+  }
+  
+  .convoNlistWrapper .contact-list .friend {
+    font-size: 30px;
+    padding: 0;
+    margin: 5px 0;
+    display: block;
+    background-color: transparent;
+    height: 70px;
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 100ms ease-out;
+    box-sizing: border-box;
+    background-color: rgb(252, 252, 252);
+  }
+  
+  .convoNlistWrapper .contact-list .friend:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .convoNlistWrapper .contact-list .friend .openMoreButton {
+    opacity: 0.3;
+    transition: 200ms;
+  }
+  
+  .convoNlistWrapper .contact-list .friend:hover .openMoreButton{
+    opacity: 1;
+  }
+  
+  /* .convoNlistWrapper .contact-list .friend:focus {
+    background: linear-gradient(90deg, rgb(201, 59, 59),rgb(54, 54, 175));
+    color: white;
+  } */
+  
+  .profile {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    left: 10px;
+    overflow: hidden;
+    display: inline-block;
+    background-image: url("visuals/blank-profile-picture-973460_640.png");
+    background-size: 100% 100%;
+  }
+  
+  .profile img {
+    display: inline;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .convoNlistWrapper .contact-list .friend div {
+    display: inline-block;
+  }
+  
+  .convoNlistWrapper .contact-list .friend p {
+    font-size: 13px;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .convoNlistWrapper .contact-list .friend .conversation-info {
+    background-color: transparent;
+    position: absolute;
+    height: 50px;
+    width: calc(100% - 120px);
+    padding-top: 3px;
+    top: 50%;
+    right: 50px;
+    box-sizing: border-box;
+    transform: translate(0, -50%);
+    overflow: hidden;
+  }
+  
+  .convoNlistWrapper .contact-list .friend .email{
+    font-size: 10px;
+    color: rgb(107, 107, 107);
+    font-weight: bold;
+  }
+  
+  .convoNlistWrapper .contact-list .friend .username {
+    margin-bottom: 2px;
+    font-size: 23px;
+  }
+  
+  .convoNlistWrapper .conversationWrapper .inputArea .chatInput::-webkit-scrollbar{
+    width: 0;
+  }
+  
+  .convoNlistWrapper .contact-list .contacts::-webkit-scrollbar, .convoNlistWrapper .conversation::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .convoNlistWrapper .contact-list .contacts::-webkit-scrollbar-track, .convoNlistWrapper .conversation::-webkit-scrollbar-track  {
+    background: #f1f1f1;
+  }
+  .convoNlistWrapper .contact-list .contacts::-webkit-scrollbar-thumb, .convoNlistWrapper .conversation::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 2px;
+  }
+  .convoNlistWrapper .contact-list .contacts::-webkit-scrollbar-thumb:hover, .convoNlistWrapper .conversation::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  .conversation .loadingCircle{
+    width: 50px;
+    margin-left: 50%;
+    margin-top: -20px;
+    transform: translate(-50%);
+  }
+  
+  .timestampDiv {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translate(calc(100%), -50%);
+    background-color: rgba(44, 44, 44, 0.7);
+    right: 0;
+    color: white;
+    font-size: 13px;
+    padding: -40px;
+    border-radius: 5px;
+    opacity: 0.1;
+    transition: 100ms;
+    white-space: nowrap;
+    width: 0;
+  }
+  
+  .outgoing-message-content .timestampDiv {
+    left: 0;
+    transform: translate(calc(-100%), -50%);
+  }
+  
+  .timestampDiv p {
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .convoNlistWrapper .conversationWrapper {
+    width: 60%;
+    min-width: calc(100% - 500px);
+    /* flex-direction: column; */
+    background-color: white;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    /* background-image: url("https://img.wallpapersafari.com/tablet/768/1024/79/2/XdyIRQ.jpg"); */
+    background: linear-gradient(270deg, rgb(255, 108, 152), rgb(255, 128, 121),rgb(255, 150, 112), rgb(255, 182, 109), rgb(255, 217, 120), rgb(219, 255, 112), rgb(165, 255, 112), rgb(112, 255, 136),rgb(112, 255, 217), rgb(106, 161, 255), rgb(187, 115, 255));
+    background-size: 2200% 2200%;
+    animation: animatedBackground 500s linear infinite;
+  }
+  
+  @keyframes animatedBackground {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  
+  .conversation-header {
+    height: 64px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 5;
+    background-color: rgb(244, 239, 239);
+    border: none;
+    border-left: solid 1px rgb(206, 206, 206);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
+  }
+  
+  .convoNlistWrapper .conversationWrapper .conversation {
+    scroll-behavior: smooth;
+    width: 100%;
+    height: calc(100vh - 125px);
+    background-color: transparent;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    padding: 10px 5px;
+    box-sizing: border-box;
+  }
+  
+  .convoNlistWrapper .conversationWrapper .inputArea {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    border-top: solid 1px rgb(199, 199, 199);
+    justify-content: center;
+    background-color: rgb(244, 239, 239);
+  }
+  
+  .convoNlistWrapper .conversationWrapper .inputArea .sendMessageButton {
+    position: absolute;
+    right: 5px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin-left: 0;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .convoNlistWrapper .conversationWrapper .inputArea .sendMessageButton:hover{
+    transform: scale(1.05);
+  }
+  
+  .convoNlistWrapper .conversationWrapper .inputArea .chatInput {
+    position: absolute;
+    resize: none;
+    width: calc(100% - 60px);
+    bottom: 15px;
+    right: 50px;
+    max-height: 172px;
+    border-radius: 15px;
+    margin: 0;
+    border: solid 1px rgb(200, 200, 200);
+    background-color: rgb(255, 255, 255);
+    padding: 6px 5px 6px 9px;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+  }
+  
+  .chatInput::placeholder {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .convoNlistWrapper .conversationWrapper .inputArea .chatInput::selection {
+    background-color: rgb(98, 171, 255);
+  }
+  
+  .convoNlistWrapper .conversationWrapper .inputArea .chatInput:focus {
+    border-color: rgb(55, 125, 230);
+  }
+  
+  .convoNlistWrapper .conversationWrapper .conversation .message-inner-wrapper {
+    padding: 1px 2.5px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  .message-spacer {
+    display: block;
+    height: 15px;
+  }
+  
+  .conversation .time-stamp{
+    display: block;
+    padding: 10px;
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .conversation .time-stamp span{
+    white-space: nowrap;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 13px;
+    background-color: whitesmoke;
+  }
+  
+  .conversation-header .profile{
+    width: 40px;
+    height: 40px;
+    left: 20px;
+  }
+  
+  .conversation-header .username-info {
+    width: calc(100% - 200px);
+    top: 50%;
+    right: 120px;
+    box-sizing: border-box;
+    transform: translate(0, -50%);
+    position: absolute;
+    white-space: nowrap;
+    overflow-x: hidden;
+  }
+  
+  .conversation-header .username-info span {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .convoNlistWrapper .contact-list .friend .newMessageNotif{
+    position: absolute;
+    display: none;
+    right: 50px;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: red;
+    border-radius: 50%;
+    /* box-shadow: 0px 0px 6px red; */
+    animation: linear 1.2s newNotifMessageAnimation infinite;
+  }
+  
+  .convoNlistWrapper .contact-list .unreadMessage .newMessageNotif{
+    display: inline-block;
+  }
+  
+  .convoNlistWrapper
+    .conversationWrapper
+    .conversation
+    .incoming-message-content,
+  .convoNlistWrapper
+    .conversationWrapper
+    .conversation
+    .outgoing-message-content {
+    position: relative;
+    padding: 7px 10px;
+    margin: 0;
+    /* border-radius: 17px; */
+    background-color: rgb(241, 241, 241);
+    display: inline-block;
+    box-sizing: border-box;
+    max-width: calc(60% + 100px);
+    text-align: justify;
+  }
+  
+  .introScreen div.introduction {
+    position: absolute;
+    width: 90%;
+    margin: 0;
+    margin-left: 5%;
+    height: 60px;
+    overflow-y: scroll;
+    bottom: 30px;
+  }
+  
+  .introScreen div.introtextWrapper {
+    height: 100%;
+  }
+  
+  .introScreen div.introduction p{
+    text-align: justify;
+  }
+  
+  div.lang-selector {
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 16.5px;
+    z-index: 10;
+  }
+  
+  div select.selectpicker {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 4px;
+    color: blue;
+    font-size: 15px;
+  }
+  
+  div select.selectpicker:hover {
+    text-decoration: underline;
+  }
+  
+  select option {
+    display: inline-block;
+    padding: 3px;
+    height: 20px;
+  }
+  
+  .conversationAd {
+    display: block;
+    left: 0px;
+    /* transform: translate(-50%); */
+    text-align: center;
+    min-height: 100px;
+    width: calc(70% + 100px);
+    background-color: rgb(241, 241, 241);
+    margin: 5px 0 6px 0;
+    border-radius: 17px;
+  }
+  .conversationAd p {
+    padding: 5px 0;
+    color: darkslategray;
+    margin: 0;
+    font-size: 11px;
+  }
+  
+  .convoNlistWrapper
+    .conversationWrapper
+    .conversation
+    .incoming-message-content:hover .timestampDiv {
+      transform: translate(calc(100% + 5px), -50%);
+      opacity: 1;
+      width: min-content;
+      padding: 4px;
+    }
+  
+  .convoNlistWrapper
+    .conversationWrapper
+    .conversation
+    .outgoing-message-content:hover .timestampDiv {
+      transform: translate(calc(-100% - 5px), -50%);
+      opacity: 1;
+      width: min-content;
+      padding: 4px;
+    }
+  
+  .convoNlistWrapper
+    .conversationWrapper
+    .conversation
+    .incoming-message-content span::selection{
+    background-color: rgb(98, 171, 255);
+  }
+  .convoNlistWrapper
+    .conversationWrapper
+    .conversation
+    .outgoing-message-content span::selection{
+    background-color: rgb(225, 0, 255);
+  }
+  
+  .message-inner-wrapper span{
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+  
+  .convoNlistWrapper
+    .conversationWrapper
+    .conversation
+    .incoming-message-content {
+  float: left;
+  }
+  
+  .convoNlistWrapper
+    .conversationWrapper
+    .conversation
+    .outgoing-message-content {
+    float: right;
+    background-color: rgb(55, 125, 230);
+    color: white;
+  }
+  
+  .convoNlistWrapper .conversationWrapper .conversation .pendingMessage div {
+    background-color: gray;
+  }
+  
+  .convoNlistWrapper .conversationWrapper .conversation .pendingMessage:first-of-type{
+    animation: showPendingMessage 300ms ease-out;
+  }
+  
+  .introScreen,
+  .loginScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    z-index: 11;
+  }
+  
+  .loginScreen {
+    display: none;
+    background-color: rgb(207, 207, 207);
+    z-index: 11;
+  }
+  
+  .introtextWrapper,
+  .loginFormWrapper,
+  .signUpFormWrapper {
+    display: inline-block;
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    cursor: default;
+  }
+  
+  .introScreen h2,
+  .introScreen h1 {
+    display: block;
+  }
+  
+  .introScreen h2 {
+    margin-bottom: 0;
+  }
+  
+  .introScreen h1 {
+    font-size: 100px;
+    font-family: "Dancing Script";
+    margin: 0 0 30px 0;
+  }
+  
+  .introScreen .introtextWrapper #nextButton,
+  .loginScreen .loginFormWrapper button,
+  .loginScreen .signUpFormWrapper button {
+    display: inline-block;
+    position: static;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 0px;
+    border: none;
+    background-color: rgb(55, 125, 230);
+    border-radius: 7px;
+    color: white;
+    box-shadow: 0 4px 6px 1px rgb(138, 171, 221);
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+    transition: 200ms;
+  }
+  .introScreen .introtextWrapper .titleImg{
+    height: 500px;
+    display: block;
+    margin-top: 80px;
+    margin-left: calc(50% - 5px);
+    transform: translate(-50%);
+  }
+  
+  .introScreen .introtextWrapper #nextButton {
+    position: relative;
+    top: -190px;
+    height: 55px;
+    width: 210px;
+    font-weight: bolder;
+    font-size: 16px;
+    background-color: transparent;
+    color: white;
+    box-shadow: none;
+  }
+  
+  .introScreen .introtextWrapper #nextButton:hover {
+    transform: scale(1.05);
+  }
+  
+  .introScreen .introtextWrapper #nextButton:focus {
+    box-shadow: none;
+  }
+  
+  .loginFormWrapper,
+  .signUpFormWrapper {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: 500ms;
+    max-height: 100%;
+    overflow-y: hidden;
+  }
+  
+  .signUpFormWrapper {
+    display: none;
+  }
+  
+  .loginFormWrapper form input,
+  .signUpFormWrapper form input {
+    display: block;
+    font-size: 15px;
+    margin: 5px 0px 10px 0;
+    padding: 0px 10px 0px 10px;
+    height: 40px;
+    width: 100%;
+    border: solid #EAEBEE 2px;
+    border-radius: 6px;
+    outline: none;
+    box-shadow: none;
+    transition: 200ms;
+    box-sizing: border-box;
+    background-color: #EAEBEE;
+  }
+  
+  .loginFormWrapper form input:focus,
+  .signUpFormWrapper form input:focus {
+    background-color: #e7e7e7af;
+  }
+  
+  .loginFormWrapper form label,
+  .signUpFormWrapper form label {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(94, 94, 94);
+  }
+  
+  .loginFormWrapper form input[type="password"],
+  .signUpFormWrapper form input[type="password"] {
+    font-family: "Montserrat:wght@900", sans-serif;
+    font-weight: 1000;
+    letter-spacing: 2px;
+  }
+  
+  .loginFormWrapper form input:focus,
+  .signUpFormWrapper form input:focus {
+    box-shadow: none;
+    border: solid rgb(122, 122, 122) 2px;
+  }
+  
+  .loginScreen .loginFormWrapper button,
+  .loginScreen .signUpFormWrapper button {
+    display: inline-block;
+    font-size: 15px;
+    height: 40px;
+    width: 100%;
+    border: none;
+    margin: 10px 0 10px 0;
+    border-radius: 7px;
+    transform: none;
+  }
+  
+  .loginScreen button img{
+    margin-top: 5px;
+  }
+  
+  .loginScreen .loginFormWrapper button:hover,
+  .loginScreen .signUpFormWrapper button:hover {
+    background-color: rgb(70, 140, 245);
+    transform: scale(1.03);
+  }
+  
+  .loginScreen .loginFormWrapper button:focus,
+  .loginScreen .signUpFormWrapper button:focus, .signUpFormWrapper #signUpSubmit:focus, .loginFormWrapper #loginSubmit:focus {
+    box-shadow: none;
+    opacity: 0.7;
+  }
+  
+  .loginEmailDiv,
+  .loginPasswordDiv,
+  .signUpEmailDiv,
+  .signUpPasswordDiv,
+  .signUpNameDiv {
+    text-align: left;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .login-error, .signUp-error{
+    margin: 0 5px;
+    color: red;
+    max-height: 0;
+    font-size: 14px;
+    transition: 400ms;
+    overflow-y: hidden;
+  }
+  
+  .on {
+    max-height: 200px;
+  }
+  
+  .signUp-error{
+    font-size: 14px;
+  }
+  
+  body .signUpFormWrapper form  #agreementCheckbox {
+    display: inline;
+    margin: 0;
+    height: 20px;
+    width: 20px;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+  
+  body .signUpFormWrapper form .agreementLabel {
+    font-size: 13px;
+    text-align: left;
+    position: relative;
+    top: -8px;
+    left: 4px;
+    margin-bottom: 5px;
+  }
+  
+  .agreementLabel a {
+    color: rgb(55, 125, 230);
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .agreementLabel a:hover, .agreementLabel a:focus {
+    text-decoration: underline;
+  }
+  
+  .loginFormWrapper .orLine {
+    position: relative;
+    top: 0px;
+    display: inline-block;
+    height: 1px;
+    margin: 0 10px 6px 10px;
+    width: 100px;
+    background-color: black;
+  }
+  
+  .loginFormWrapper hr,
+  .signUpFormWrapper hr {
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+  
+  .loginFormWrapper .orP {
+    display: inline-block;
+    margin: 0;
+  }
+  
+  .orWrapper {
+    display: block;
+    padding: 5px;
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+    height: 25px;
+    box-sizing: border-box;
+  }
+  
+  #signInWGoogle img {
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+  }
+  
+  .loginScreen .loginFormWrapper h1,
+  .loginScreen .signUpFormWrapper h1 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 23px;
+    color: black;
+    cursor: text;
+  }
+  
+  .loginScreen .loginFormWrapper h1{
+    font-size: 30px;
+  }
+  
+  .social-credit-score{
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%);
+    height: 200px;
+    width: 356px;
+    background-color: rgb(190, 69, 69);
+    animation: showSocialCredit 600ms ease-out;
+  }
+  
+  .social-credit-score img{
+    height: 100%;
+  }
+  
+  #signUpSubmit p {
+    display: inline;
+  }
+  
+  #signUpSubmit, #loginSubmit{
+    background-color: rgb(0, 207, 0);
+    box-shadow: 0 4px 6px 1px rgb(80, 190, 80);
+  }
+  
+  #signUpSubmit {
+    margin-top: 12px;
+  }
+  
+  #loginPassword,
+  #signUpPasswordC {
+    margin-bottom: 10px;
+  }
+  
+  .error-popup {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    height: 48px;
+    box-sizing: border-box;
+    color: black;
+    padding: 10px 20px 10px 20px;
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+  }
+  
+  .error-popup span {
+    display: inline-block;
+  }
+  
+  .error-popup .error-text {
+    font-size: 16px;
+    height: 20px;
+    position: relative;
+    top: -3px;
+    margin-left: 10px;
+  }
+  
+  .error-popup .wifi-icon {
+    margin-top: 3px;
+    height: 20px;
+    color: #ff6767;
+  }
+  
+  .contacts .loadingCircle {
+    display: none;
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-top: 20px;
+  }
+  
+  .contacts .moreDiv .loadingCircle {
+    transform: none;
+  }
+  
+  .contacts .searchError{
+    display: none;
+    margin-left: 50%;
+    transform: translate(-50%);
+    width: 175px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 30px;
+    color: red;
+  }
+  
+  .contacts .searchError span{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 26px;
+  }
+  
+  .contacts .searchError p{
+    position: absolute;
+    right: 0;
+    font-weight: 600;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  .noFriendsWarning{
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    color: #f72121;
+    width: 70%;
+  }
+  
+  .noFriendsWarning p{
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .scrollDownConvoButton{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border: none;
+    border: none;
+    background-color: rgba(242, 238, 238, 0.5);
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+    transition: 150ms;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4);
+  }
+  
+  .scrollDownConvoButtonOn {
+    bottom: 70px;
+  }
+  
+  .scrollDownConvoButton:hover {
+    transform: scale(1.05);
+    background-color: white;
+    color: rgb(34, 137, 255);
+  }
+  
+  .scrollDownConvoButton span{
+    font-size: 32px;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .active-contact {
+    height: 120px;
+    width: 120px;
+    padding: 20px;
+    padding-top: 10px;
+    box-sizing: border-box;
+  }
+  
+  .contact-circle {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-image: url("visuals/blank-profile-picture-973460_640.png");
+    background-size: 100% 100%;
+    overflow: hidden;
+  }
+  
+  .contact-circle img {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .active-signal {
+    position: absolute;
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    background-color: rgb(67, 255, 29);
+    left: 83px;
+    top: 67px;
+    border-radius: 50%;
+    animation: linear 1.2s activeSignalAnimation infinite;
+  }
+  
+  .contact-username {
+    margin-top: 5px;
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  @keyframes collapse {
+    0%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+  
+  
+  @keyframes shrinkSignUpForm {
+    0%{
+      height: 571px;
+    }
+    100%{
+      height: 382px;
+    }
+  }
+  
+  @keyframes growLoginForm {
+    0%{
+      height: 382px;
+    }
+    100%{
+      height: 571px;
+    }
+  }
+  
+  @keyframes searchButtonAnimation {
+    60% {
+      transform: scale(1.8);
+      color: rgb(0, 255, 0);
+    }
+    90% {
+      color: rgb(0, 255, 0);
+    }
+    100% {
+      transform: none;
+    }
+  }
+  
+  @keyframes activeSignalAnimation {
+    0% {
+      box-shadow: none;
+    }
+    40% {
+      box-shadow: 0px 0px 2px 2px rgba(0, 255, 0, 0.6);
+    }
+    100% {
+      box-shadow: none;
+    }
+  }
+  
+  @keyframes newNotifMessageAnimation {
+    0% {
+      box-shadow: none;
+    }
+    40% {
+      box-shadow: 0px 0px 2px 2px rgba(255, 0, 0, 0.6);
+    }
+    100% {
+      box-shadow: none;
+    }
+  }
+  
+  @keyframes showPendingMessage {
+    0%{ transform: translate(0, 50px);}
+    100% { transform: none;}
+  }
+  
+  @keyframes showSocialCredit {
+    0% {
+      transform: translate(-50%, 300px);
+      opacity: 0%;
+      }
+    100% {
+      opacity: 100%;
+      transform: translate(-50%, 0);
+    }
+  }
+  
+  @keyframes searchButtonAnimationError {
+    12.5% {
+      transform: scale(1.05) translate(10px);
+      color: red;
+    }
+    25% {
+      transform: scale(1.1) translate(-10px);
+    }
+    50% {
+      transform: scale(1.1) translate(10px);
+    }
+    75% {
+      transform: scale(1.05) translate(-10px);
+    }
+    90% {
+      color: red;
+    }
+    100% {
+      transform: none;
+    }
+  }
+  
+  @keyframes loading {
+    /* 50%{transform: translate(-50%, -50%) rotate(225deg);}
+      75%{transform: translate(-50%, -50%) rotate(270deg);} */
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes introScreenAnimation {
+    100% {
+      transform: translate(0, -100vh);
+      background-color: rgb(255, 255, 255);
+    }
+  }
+  
+  @media only screen and (max-width: 880px) {
+    *::selection {
+      background-color: transparent;
+    }
+  
+    .contact-list .contacts .friend .openMoreButton {
+      display: none;
+      background-color: red;
+    }
+  
+    .convoNlistWrapper .contact-list .contacts .friend .conversation-info{
+      display: none;
+      background-color: red;
+    }
+  
+    .convoNlistWrapper .contact-list .contacts .friend {
+      border-radius: 50%;
+      background-color: transparent;
+    }
+  
+    .convoNlistWrapper .contact-list .contacts::-webkit-scrollbar {
+      width: 0;
+    }
+  
+    .convoNlistWrapper .contact-list{
+      width: 80px;
+    }
+  
+    .convoNlistWrapper .contact-list .contacts {
+    border-right: solid rgb(206, 206, 206) 1px;
+    }
+  
+    .convoNlistWrapper #navBar #searchBarWrapper{
+      display: none;
+    }
+  
+    .convoNlistWrapper .conversationWrapper{
+      min-width: calc(100% - 80px);
+  
+    }
+  
+    .convoNlistWrapper .conversationWrapper .conversation .message-inner-wrapper .incoming-message-content, .convoNlistWrapper .conversationWrapper .conversation .message-inner-wrapper .outgoing-message-content {
+      max-width: calc(60% + 70px);
+    }
+  
+    .noFriendsWarning{
+      display: none;
+    }
+  
+    .active-contacts-wrapper {
+      display: none;
+    }
+  }
+  

@@ -1,0 +1,396 @@
+* {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+div.lang-selector {
+    display: none;
+    position: absolute;
+    right: 17px;
+    top: 8px;
+    z-index: 10;
+  }
+  
+  div select.selectpicker {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 4px;
+    color: blue;
+    font-size: 15px;
+}
+  
+  div select.selectpicker:hover {
+    text-decoration: underline;
+  }
+  
+  select option {
+    display: inline-block;
+    padding: 3px;
+    height: 20px;
+  }
+
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    background-color: #fafafa;
+}
+
+main {
+    display: none;
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    padding: 50px 10px;
+    box-sizing: border-box;
+    position: absolute;
+    margin: 0;
+    left: 50%;
+    transform: translate(-50%);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+header {
+    padding: 20px 30px 0 30px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    position: relative;
+    color: rgb(56, 56, 56);
+}
+
+.mainInfoDiv {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: calc(100% - 290px);
+    white-space: pre-wrap;
+    text-align: left;
+    text-overflow: ellipsis;
+}
+
+.mainInfoDiv * {
+    white-space: nowrap;
+    display: block;
+    position: absolute;
+    left: 0;
+}
+
+.mainInfoDiv h2 {
+    margin-top: 100px;
+}
+
+hr{
+    margin: 20px -10px;
+}
+
+.title{
+    display: inline-block;
+    font-size: calc(1.5vw + 26px) ;
+    margin: 50px 0 20px;
+    font-weight: lighter;
+}
+
+.emailTitle{
+    display: inline-block;
+    margin: 0;
+    font-size: calc(1.5vw + 14px) ;
+}
+
+.editTitle {
+    position: relative;
+    margin-top: 0;
+    color: rgb(65, 65, 65);
+}
+
+.returnLink {
+    color: black;
+    background-color: rgb(224, 224, 224);
+    font-size: 20px;
+    padding: 10px 10px 10px 40px;
+    border-radius: 0 0 5px 5px;
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    width: calc(100% - 20px);
+    transition: 100ms;
+    box-sizing: border-box;
+}
+
+.returnLink:hover {
+    color: rgb(75, 87, 255);
+    text-decoration: underline;
+}
+
+.returnLink span.material-icons-round {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+}
+
+.user-info-form input {
+    margin-top: 0px;
+    padding: 2px 0 0 3px;
+    width: 100%;
+    height: 28px;
+    outline: none;
+    transition: 200ms;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+.user-info-form input:focus{
+    border-color: rgb(110, 149, 255);
+}
+
+.user-info-form label {
+    font-size: 13px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.grid-item {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.signOutDiv {
+    border: none;
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+    height: 80px;
+    grid-area: "a";
+}
+
+.profileInfo {
+    background-color: rgb(233, 230, 255);
+    border-radius: 10px;
+    grid-area: "b";
+}
+
+
+.signOutButton{
+    background-color: rgb(255, 56, 56);
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    padding: 9px 50px 10px 15px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    box-sizing: border-box;
+    position: relative;
+    transition: 150ms;
+}
+
+.signOutButton:hover {
+    background-color: rgb(212, 56, 56);
+    text-decoration: underline;
+    transform: scale(1.01);
+}
+
+.signOutButton span.material-icons-round {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+}
+
+.submitEdit {
+    margin-top: 20px;
+    padding: 8px 13px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2374e1;
+    color: white;
+    font-size: 16px;
+}
+
+.profile-wrapper{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 1px black;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-wrapper img{
+    display: inline;
+    height: 100%;
+    width: 100%;
+}
+
+header .outerWrapper {
+    position: relative;
+    display: inline-block;
+}
+
+header .outerWrapper .addDiv{
+    z-index: 5;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(95, 159, 255);
+    border: none;
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    color: white;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+header .outerWrapper .addDiv span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.4);
+}
+
+.big-profile-wrapper{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    transform: translate(-50%);
+    cursor: auto;
+}
+
+.currentUser-email{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.change-pp-modal{
+    display: inline-block;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    filter: none;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding-top: 350px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: 0;
+    backdrop-filter: blur(8px);
+    z-index: 6;
+}
+
+.change-pp-modal input{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    height: 25px;
+    outline: none;
+    border: solid 1px black;
+    margin-top: 10px;
+}
+
+.change-pp-modal label{
+    color: rgb(56, 56, 56);
+}
+
+input{
+    display: block;
+    height: 20px;
+    border-radius: 5px;
+    border: solid black 1px;
+}
+
+.change-pp-modal button{
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: rgb(72, 152, 206);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.change-pp-modal-parent{
+    display: none;
+    z-index: 6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(95, 95, 95, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+@media only screen and (max-width: 800px) {
+    .small-profile-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    header .outerWrapper .addDiv {
+        top: 3px;
+        right: 3px;
+        width: 30px;
+        height: 30px;
+    }
+
+    header .outerWrapper .addDiv span {
+        transform: translate(-50%, -50%);
+    }
+    
+    .mainInfoDiv {
+        width: calc(100% - 160px);
+    }
+
+    .mainInfoDiv .title {
+        margin-top: 0;
+    }
+
+    .mainInfoDiv .emailTitle {
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
+
+    header .mainInfoDiv .emailTitle {
+        font-size: calc(2vw + 4px) ;
+        margin-top: 45px;
+    }
+
+    header .mainInfoDiv .title {
+        font-size: calc(2vw + 14px) ;
+        margin-top: 15px;
+    }
+
+    header {
+        padding: 20px 20px 0 20px;
+    }
+
+    .mainInfoDiv {
+        width: calc(100% - 140px);
+    }
+
+}

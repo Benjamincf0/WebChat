@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logoImg.png" sizes="144x144">
+    <title>Projet personnel</title>
+    <link rel="stylesheet" href="my-account.css">
+    <script defer src="languages.js"></script>
+    <script defer src="auth.js"></script>
+    <script defer src="my-account.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+</head>
+
+<body>
+
+        <div class="change-pp-modal-parent">
+            <div class="change-pp-modal">
+                <div class="profile-wrapper big-profile-wrapper">
+                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
+                        alt="" srcset="">
+                </div>
+                <form class="imageURLform" action="">
+                    <label class="langchange" data-key="photo-form-label" for="69420">Entrer l'adresse web publique d'une image 1×1</label>
+                    <input name="69420" type="text" placeholder="https://photos.com/myface">
+                    <button class="langchange" data-key="photo-form-submit" type="submit">Soumettre</button>
+                </form>
+            </div>
+        </div>
+
+<main>
+    <div class="lang-selector">
+        <select class="selectpicker">
+          <option class="langchange" data-key="french"  value="fr">French</option>
+          <option class="langchange" data-key="english" value="en">English</option>
+          <option class="langchange" data-key="spanish" value="es">Spanish</option>
+        </select>
+    </div>
+        <header>
+        <div class="outerWrapper">
+            <div class="profile-wrapper small-profile-wrapper">
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="" srcset="">
+            </div>
+            <div class="addDiv"><span class="material-icons-round">add</span></div>
+        </div>
+            <div class="mainInfoDiv">
+                <h1 class="title"></h1>
+                <h2 class="emailTitle"></h2>
+            </div>
+            <hr>
+        </header>
+
+    <div class="grid-container">
+
+        <div class="profileInfo grid-item">
+        <h2 data-key="edit-info-title" class="editTitle langchange">Modifiez vos informations:</h2>
+        <form class="user-info-form">
+            <label class="langchange" data-key="edit-username-input-label" for="displayNameInput" >Nom d'utilisateur</label>
+            <input class="displayNameInput" type="text" maxlength="45">
+            <button data-key="edit-submit" class="submitEdit langchange" type="submit">Soumettre</button>
+        </form>
+        </div>
+
+        <div class="signOutDiv grid-item">
+            <button class="signOutButton"><span class="langchange" data-key="logout-btn">Se déconnecter</span><span class="material-icons-round">logout</span></button>
+        </div>
+        
+    </div>
+        <a href="index.html" class="returnLink"><span class="material-icons-round">arrow_back</span><span class="langchange" data-key="return-webchat-link">Retourner à Webchat</span></a>
+    </main>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+</body>
+
+</html>
