@@ -27,10 +27,6 @@ The website is hosted at https://projet-personnel-245c7.firebaseapp.com
 - Responsive and aesthetically pleasing design using sleek animations and Google Fonts.
 - Interactive and user-friendly components and icons like search bars, buttons, and form fields.
 
-### 6. **Custom Notifications**
-- Visual indicators for unread messages.
-- Real-time alerts for new messages.
-
 ### 7. **Ad Integration (Work In progress)**
 - Integrated with Google AdSense, Media.net, and Propeller Ads for monetization.
 - Non-intrusive ad placements to maintain a clean user experience.
